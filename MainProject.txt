@@ -21,7 +21,7 @@ public class MainProjectPhase1 {
     
    private static final String WELCOME_TO_MY_COMPANY_PORTAL =
 		   
-   "\n Welcome to Main Project Phase_1  " + "  " + "\n By My Company Pvt.Ltd " + " " + "\n The name is : Afisha Sulthana Mohammad";
+   "\n Welcome to Phase_1 Main Project  " + "  " + "\n By My Company Pvt.Ltd " + " " + "\n The name is : Afisha Sulthana Mohammad";
     
    private static final String The_LOGIC_PART =
             "\nMAIN MENU - Select any of the following operations: \n"+
@@ -38,9 +38,9 @@ public class MainProjectPhase1 {
 
     void firstView() {
         System.out.println(The_LOGIC_PART);
-        try(Scanner scanner = new Scanner(System.in)){
+        try(Scanner sc = new Scanner(System.in)){
             
-        	int option = scanner.nextInt();
+        	int option = sc.nextInt();
             switch (option){
                 case 1 : {
                 	showListOfFiles();
@@ -64,27 +64,27 @@ public class MainProjectPhase1 {
 
     void secondView() {
         System.out.println(THE_FUNCTIONALITY_PART);
-        try(Scanner scanner = new Scanner(System.in))
+        try(Scanner sc = new Scanner(System.in))
         {
-            char[] input = scanner.nextLine().toLowerCase().trim().toCharArray();
+            char[] input = sc.nextLine().toLowerCase().trim().toCharArray();
             char logic = input[0];
 
             switch (logic){
                 case '1' : {
                     System.out.print("Please Enter a File Name you want to Add : ");
-                    String filename = scanner.next().trim().toLowerCase();
+                    String filename = sc.next().trim().toLowerCase();
                     addFileMethod(filename);
                     break;
                 }
                 case '2' : {
                     System.out.print("Please Enter a File Name you want to Delete : ");
-                    String filename = scanner.next().trim();
+                    String filename = sc.next().trim();
                     deleteFileMethod(filename);
                     break;
                 }
                 case '3' : {
                     System.out.print("Please Enter a File Name you want to Search For : ");
-                    String filename = scanner.next().trim();
+                    String filename = sc.next().trim();
                     searchFileMethod(filename);
                     break;
                 }
@@ -151,7 +151,8 @@ public class MainProjectPhase1 {
         }
         System.out.println("File Not found (FNF)");
     }
-	public static void main(String[] args) {
+	
+   public static void main(String[] args) {
 		
 		System.out.println(WELCOME_TO_MY_COMPANY_PORTAL); 
         MainProjectPhase1 menu = new MainProjectPhase1();
@@ -162,9 +163,10 @@ public class MainProjectPhase1 {
 }
 
 
+
 OUTPUT:
 
-Welcome to Main Project Phase_1    
+Welcome to Phase_1 Main Project    
  By My Company Pvt.Ltd  
  The name is : Afisha Sulthana Mohammad
 MyFilePath : D:\Java Files
@@ -174,7 +176,10 @@ MAIN MENU - Select any of the following operations:
 2 - Perfotm functions like Add, Delete or Search
 3 - Exit Program
 1
-The folder is empty
+The files in D:\Java Files are :
+project1
+project2
+project3
 
 MAIN MENU - Select any of the following operations: 
 1 - List the types of files in directory
@@ -187,27 +192,9 @@ Select any of the following  operations:
    2 - Delete a file
    3 - Search a file
    4 - GoBack to Logic Part
-1
-Please Enter a File Name you want to Add : project1
-File project1 added to D:\Java Files
-   
-Select any of the following  operations: 
-   1 - Add a file
-   2 - Delete a file
-   3 - Search a file
-   4 - GoBack to Logic Part
-1
-Please Enter a File Name you want to Add : project2
-File project2 added to D:\Java Files
-   
-Select any of the following  operations: 
-   1 - Add a file
-   2 - Delete a file
-   3 - Search a file
-   4 - GoBack to Logic Part
-1
-Please Enter a File Name you want to Add : project3
-File project3 added to D:\Java Files
+2
+Please Enter a File Name you want to Delete : project2
+File project2 deleted from D:\Java Files
    
 Select any of the following  operations: 
    1 - Add a file
@@ -224,8 +211,30 @@ MAIN MENU - Select any of the following operations:
 1
 The files in D:\Java Files are :
 project1
-project2
 project3
+
+MAIN MENU - Select any of the following operations: 
+1 - List the types of files in directory
+2 - Perfotm functions like Add, Delete or Search
+3 - Exit Program
+2
+   
+Select any of the following  operations: 
+   1 - Add a file
+   2 - Delete a file
+   3 - Search a file
+   4 - GoBack to Logic Part
+3
+Please Enter a File Name you want to Search For : project4
+File Not found
+   
+Select any of the following  operations: 
+   1 - Add a file
+   2 - Delete a file
+   3 - Search a file
+   4 - GoBack to Logic Part
+4
+Going back to main logic part
 
 MAIN MENU - Select any of the following operations: 
 1 - List the types of files in directory
